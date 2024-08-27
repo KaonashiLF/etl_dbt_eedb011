@@ -1,0 +1,18 @@
+# ~/.dbt/profiles.yml
+
+transformation:  # Nome do perfil
+  target: dev  # Ambiente alvo (ex: dev, prod)
+  outputs:
+    dev:
+      type: snowflake
+      account: mjymusg-di80649  # Nome da sua conta Snowflake (ex: abc12345.us-east-1)
+      user: LUCASFMS  # Nome de usuário no Snowflake
+      password:  # Senha do usuário no Snowflake
+      role: ACCOUNTADMIN  # Função Snowflake (ex: sysadmin)
+      database: dbt_db  # Nome do banco de dados no Snowflake
+      warehouse: dbt_wh  # Nome do warehouse no Snowflake
+      schema: dbt_trusted  # Nome do schema que deseja usar
+      threads: 4  # Número de threads a serem usadas pelo dbt
+      client_session_keep_alive: False  # Configuração opcional
+
+      
