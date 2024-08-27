@@ -1,14 +1,5 @@
 WITH f_banks AS (
     SELECT * FROM {{ref('banks')}}
-),
-
-banks_remove_dup AS (
-    SELECT
-        *
-        ,CASE WHEN NOME LIKE '%PRUDENCIAL%' THEN 1 ELSE 0 END AS PrudencialCheck
-        , ROW_NUMBER() OVER(PARTITION BY(CNPJ) ORDER BY PrudencialCheck ASC) AS DeleteRow
-    FROM f_banks
-    ORDER BY CNPJ
 )
 
 SELECT
@@ -16,5 +7,7 @@ SELECT
     ,CNPJ
     ,NOME
     ,REPLACE(NOME,' - PRUDENCIAL','') AS NOME_AJUSTADO
-FROM banks_remove_dup
-WHERE DeleteRow = 1 AND PrudencialCheck <= 1
+FROM f_banks
+WHERE
+    ROW_NUMBER() OVER(PARTITION BY(CNPJ) ORDER BY PrudencialCheck ASC) = 1 AND
+    CASE WHEN NOME LIKE '%PRUDENCIAL%' THEN 1 ELSE 0 END  <= 1
