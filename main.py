@@ -26,7 +26,6 @@ def generate_raw(src_path, dest_path, separator, dataset_name,columns):
         extension = ".csv"
     
     for file in files_in_path:
-        # file_name_parquet = file.replace(extension,".parquet")
 
         if file.endswith(extension):
             if dataset_name == 'complaints':
@@ -42,10 +41,7 @@ def generate_raw(src_path, dest_path, separator, dataset_name,columns):
     df_final = pd.concat(concatenated_dataframes,)
     df_final.to_csv(dest_path+f"\\{dataset_name}.csv",index=False)
 
-
-    
-            
-
+ 
     
 destination_path = "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\USP\\C3_Ingestão de Dados\\ETL com Python DBT\\Dados\\_raw\\"
 source_path="C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\USP\\C3_Ingestão de Dados\\ETL com Python DBT\\Dados\\"
