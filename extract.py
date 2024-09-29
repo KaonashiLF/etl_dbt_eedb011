@@ -18,8 +18,8 @@ def generate_raw_parquet(src_path, dest_path, separator, dataset_name):
             df.to_parquet(f"{dest_path}\\{file_name_parquet}")
             
 
-    
-destination_path = "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\USP\\C3_Ingestão de Dados\\ETL com Python DBT\\Dados\\_raw\\"
+
+destination_path = "C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\USP\\C3_Ingestão de Dados\\ETL com Python DBT\\seeds\\"
 source_path="C:\\Users\\lucas\\OneDrive\\Área de Trabalho\\USP\\C3_Ingestão de Dados\\ETL com Python DBT\\Dados\\"
 
 generate_raw_parquet(src_path=source_path+"Bancos", dest_path=destination_path+"banks",separator="\t",dataset_name="banks")
