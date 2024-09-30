@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: my_project
+    description: My project sources
+    loader: snowflake
+    schema: DBT_RAW
+    tables:
+      - name: banks
+        description: Banks data
+        loaded_at_field: _load_time
+        file_format: parquet
+        location: @my_stage/seeds/banks/*.parquet
