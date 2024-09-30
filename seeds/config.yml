@@ -1,0 +1,6 @@
+version: 2
+
+seeds:
+  - name: bancos
+    loader: parquet
+    url: banks/EnquadramentoInicia_v2.parquet
