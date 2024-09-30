@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: my_project
-    description: My project sources
+  - name: etl_dbt_eedb011
+    description: My project with DBT
     loader: snowflake
     schema: DBT_RAW
     tables:
