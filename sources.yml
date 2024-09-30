@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: etl_dbt_eedb011
+  - name: etl_dbt_eedb011.banks
     description: My project with DBT
     loader: snowflake
     schema: DBT_RAW
@@ -10,4 +10,4 @@ sources:
         description: Banks data
         loaded_at_field: _load_time
         file_format: parquet
-        location: @my_stage/seeds/banks/*.parquet
+        location: seeds/banks
