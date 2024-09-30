@@ -5,5 +5,5 @@ SELECT
   coluna_segmento AS SEGMENTO,
   coluna_cnpj AS CNPJ,
   coluna_nome AS NOME
-FROM {{ source('etl_dbt_eedb011', 'banks') }}
+FROM {{ source('my_project','banks') }}
 WHERE filename = 'EnquadramentoInicia_v2.parquet'
