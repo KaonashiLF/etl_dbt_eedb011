@@ -39,3 +39,7 @@ models:
   etl_dbt_eedb011:
     # Applies to all files under models/example/
     materialized: table
+
+seeds:
+  etl_dbt_eedb011:
+    parquet_file_path: 'seeds/banks/EnquadramentoInicia_v2.parquet'

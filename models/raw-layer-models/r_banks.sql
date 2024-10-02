@@ -1,1 +1,1 @@
-SELECT * FROM 'EnquadramentoInicia_v2.parquet'
+SELECT * FROM {{ ref('parquet_file_path') }}

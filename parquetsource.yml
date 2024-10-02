@@ -1,13 +1,7 @@
-version: 2
-
-sources:
-  - name: etl_dbt_eedb011
-    description: My project sources
-    loader: snowflake
-    schema: DBT_RAW
-    tables:
-      - name: banks
-        description: Banks data
-        loaded_at_field: _load_time
-        file_format: parquet
-        location: /seeds/banks/*.parquet
+profiles:
+  default:
+    outputs:
+      dev:
+        type: snowflake
+        vars:
+          parquet_file_path: 'seeds/banks/EnquadramentoInicia_v2.parquet'
